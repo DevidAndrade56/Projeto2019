@@ -1,0 +1,35 @@
+package util;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityTransaction;
+
+@InterceptorBinding
+@TransacionalCdi
+public class TransacionalInterceptor<InvocationContext> {
+
+	@Inject
+	private EntityManager em;
+
+	@AroundInvoke
+	public Object intercept(InvocationContext ctx) throws Exception {
+
+		Object resultado = null;
+
+		EntityTransaction transaction = em.getTransaction();
+		transaction.begin();
+
+		try {
+			resultado = ctx.proceed();
+			transaction.commit();
+		} catch (Exception pe) {
+			pe.printStackTrace();
+			if (transaction.isActive()) {
+				transaction.rollback();
+			}
+			throw pe;
+		}
+
+		return resultado;
+	}
+
+}
