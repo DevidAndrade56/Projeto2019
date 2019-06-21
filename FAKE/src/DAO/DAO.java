@@ -22,7 +22,7 @@ public class DAO<E extends IdentifiableType> {
 		em.getTransaction().begin();
 		em.merge(e);
 		em.getTransaction().commit();
-		em.close(); 
+		em.close();
 	}
 
 	public void remove(E e) {
