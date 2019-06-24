@@ -3,14 +3,14 @@ package DAO;
 
 import java.awt.List;
 
-public class UsuarioDAO<Usuario, E> extends DAO<E> {
+public class UsuarioDAO<Usuario, E, e> extends DAO<e> {
 
 	public UsuarioDAO() {
 		super();
 	}
 
-	public List findBy(Usuario filtro) {
-		return null;
+	public List findBy(Usuario a) {
+		return (List) a;
 	}
 
 	public Usuario getByID(long usuarioId) {

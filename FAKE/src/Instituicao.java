@@ -1,6 +1,10 @@
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 public class Instituicao {
 	private String nome;
+	@Id
+	@OneToMany
 	private int CNPJ;
 	private Empregador empregador;
 	public String getNome() {

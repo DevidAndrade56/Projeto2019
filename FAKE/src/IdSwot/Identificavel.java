@@ -6,6 +6,7 @@ public abstract class Identificavel<Cadastro> {
 
 	public abstract void setId(Long id);
 	
+	@SuppressWarnings({ "unchecked", "unlikely-arg-type" })
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -14,12 +15,13 @@ public abstract class Identificavel<Cadastro> {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Cadastro other = (Cadastro) obj;
+		Cadastro a = (Cadastro) obj;
 		if (getId() == null) {
-			if (((Object) other).getId() != null)
 				return false;
-		} else if (!getId().equals(((Object) other).getId()))
+		} else if (!getId().equals(((Object) a).getClass()))
 			return false;
 		return true;
 	}
 }
+
+

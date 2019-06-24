@@ -1,6 +1,10 @@
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 public class Empregador {
 	private String nome;
+	@Id
+	@OneToMany
 	private int CPF;
 
 	public String getNome() {

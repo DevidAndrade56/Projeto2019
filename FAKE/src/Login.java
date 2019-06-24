@@ -1,5 +1,10 @@
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 public class Login {
+	@Id
+	@OneToMany
+	private int id;
 	private String nome;
 	private String senha;
 	@Override
@@ -17,6 +22,12 @@ public class Login {
 	}
 	public void setSenha(String senha) {
 		this.senha = senha;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
 	}
 
 }

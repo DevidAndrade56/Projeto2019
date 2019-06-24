@@ -1,6 +1,14 @@
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 
 public class Swot {
+	@Id
+	@OneToMany
+	private int id;
+	@JoinColumn(name = "Empregador")
 	private Empregador empregador;
+	@JoinColumn(name = "Instituição")
 	private Instituicao instituição;
 	private String cincow2h;
 	private String Intranet;
@@ -39,6 +47,12 @@ public class Swot {
 	public String toString() {
 		return "Swot [empregador=" + empregador + ", instituição=" + instituição + ", cincow2h=" + cincow2h
 				+ ", Intranet=" + Intranet + ", internet=" + internet + "]";
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
 	}
 	
 

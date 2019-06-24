@@ -1,5 +1,6 @@
 
 public class Aplicativo {
+	
 	private Cadastro cadastro;
 	private Login login;
 	@Override

@@ -1,5 +1,9 @@
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 public class Cadastro {
+	@Id
+	@OneToMany
 	private int cpf;
 	private String nome;
 	private String email;
