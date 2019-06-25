@@ -1,18 +1,20 @@
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 public class Cadastro {
 	@Id
+	@GeneratedValue
 	@OneToMany
-	private int cpf;
+	private int id;
 	private String nome;
 	private String email;
 	private String senha;
 	public int getCpf() {
-		return cpf;
+		return id;
 	}
-	public void setCpf(int cpf) {
-		this.cpf = cpf;
+	public void setid(int id) {
+		this.id = id;
 	}
 	public String getNome() {
 		return nome;
@@ -34,7 +36,7 @@ public class Cadastro {
 	}
 	@Override
 	public String toString() {
-		return "Cadastro [cpf=" + cpf + ", nome=" + nome + ", email=" + email + ", senha=" + senha + "]";
+		return "Cadastro [id=" + id + ", nome=" + nome + ", email=" + email + ", senha=" + senha + "]";
 	}
 
 }

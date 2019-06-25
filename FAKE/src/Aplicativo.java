@@ -1,6 +1,10 @@
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
 public class Aplicativo {
-	
+	@Id
+	@GeneratedValue
+	private int id;
 	private Cadastro cadastro;
 	private Login login;
 	@Override
@@ -30,6 +34,12 @@ public class Aplicativo {
 	}
 	public void setInst(Instituicao inst) {
 		this.inst = inst;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
 	}
 	private Swot swot;
 	private Instituicao inst;
